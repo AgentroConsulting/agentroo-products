@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="agentroo_product_product_variant_easy_edit_view" model="ir.ui.view">
+        <field name="name">product.product.view.form.easy.copy.image</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_1920']" position="attributes">
+                <attribute name="widget">agentroo_product_copy_image</attribute>
+                <attribute name="options">
+                    {'convert_to_webp': True, 'preview_image': 'image_128', 'copy_button_position': 'center'}
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="agentroo_product_product_normal_form_view" model="ir.ui.view">
+        <field name="name">product.product.form.copy.image</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_1920']" position="attributes">
+                <attribute name="widget">agentroo_product_copy_image</attribute>
+                <attribute name="options">
+                    {'convert_to_webp': True, 'preview_image': 'image_128', 'copy_button_position': 'center'}
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="agentroo_product_product_product_view_form_normalized" model="ir.ui.view">
+        <field name="name">product.product.form.normalized.copy.image</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_view_form_normalized"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_1920']" position="attributes">
+                <attribute name="widget">agentroo_product_copy_image</attribute>
+                <attribute name="options">
+                    {'convert_to_webp': True, 'preview_image': 'image_128', 'copy_button_position': 'center'}
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="agentroo_product_product_kanban_view" model="ir.ui.view">
+        <field name="name">product.product.kanban.copy.image</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_128']" position="attributes">
+                <attribute name="widget">agentroo_product_copy_image</attribute>
+                <attribute name="options">{'img_class': 'o_image_64_contain mw-100'}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="agentroo_product_product_view_kanban_catalog" model="ir.ui.view">
+        <field name="name">product.catalog.kanban.copy.image</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_view_kanban_catalog"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_128']" position="attributes">
+                <attribute name="widget">agentroo_product_copy_image</attribute>
+                <attribute name="options">{'size': [55, 55], 'img_class': 'object-fit-contain'}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

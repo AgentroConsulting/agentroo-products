@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="agentroo_product_image_clipboard.SaleLineProductImageField" t-inherit="web.ImageField" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('opacity-trigger-hover')]" position="attributes">
+            <attribute name="class">d-inline-block position-relative opacity-trigger-hover o_agentroo_sale_line_product_image</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('opacity-trigger-hover')]/div[1]" position="before">
+            <div t-if="props.record.data[props.name] and state.isValid"
+                 class="o_agentroo_sale_line_product_image_controls position-absolute d-flex opacity-0 opacity-100-hover"
+                 aria-atomic="true">
+                <button type="button"
+                        class="btn btn-light border-0 rounded-circle m-1 p-1"
+                        data-tooltip="Copy Image"
+                        aria-label="Copy Image"
+                        t-on-click.stop="copyImage">
+                    <i class="fa fa-copy fa-fw"/>
+                </button>
+                <button type="button"
+                        class="btn btn-light border-0 rounded-circle m-1 p-1"
+                        data-tooltip="Rotate Image"
+                        aria-label="Rotate Image"
+                        t-on-click.stop="rotateImage">
+                    <i class="fa fa-repeat fa-fw"/>
+                </button>
+                <button type="button"
+                        class="btn btn-light border-0 rounded-circle m-1 p-1"
+                        data-tooltip="Flip Image"
+                        aria-label="Flip Image"
+                        t-on-click.stop="flipImage">
+                    <i class="fa fa-exchange fa-fw"/>
+                </button>
+            </div>
+        </xpath>
+        <xpath expr="//img" position="attributes">
+            <attribute name="t-att-style">imageStyle</attribute>
+        </xpath>
+    </t>
+
+    <t t-name="agentroo_product_image_clipboard.ProductCopyImageField" t-inherit="web.ImageField" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('opacity-trigger-hover')]" position="attributes">
+            <attribute name="class">d-inline-block position-relative opacity-trigger-hover o_agentroo_product_copy_image</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('opacity-trigger-hover')]/div[1]" position="before">
+            <button t-if="props.readonly and props.record.data[props.name] and state.isValid"
+                    type="button"
+                    t-att-class="copyButtonClass"
+                    data-tooltip="Copy Image"
+                    aria-label="Copy Image"
+                    t-on-click.stop="copyImage">
+                <i class="fa fa-copy fa-fw"/>
+            </button>
+        </xpath>
+        <xpath expr="//button[hasclass('o_clear_file_button')]" position="before">
+            <button t-if="props.record.data[props.name] and state.isValid"
+                    type="button"
+                    class="o_agentroo_product_copy_image_button btn btn-light border-0 rounded-circle m-1 p-1"
+                    data-tooltip="Copy Image"
+                    aria-label="Copy Image"
+                    t-on-click.stop="copyImage">
+                <i class="fa fa-copy fa-fw"/>
+            </button>
+        </xpath>
+    </t>
+</templates>

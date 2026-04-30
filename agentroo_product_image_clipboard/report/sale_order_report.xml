@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="agentroo_sale_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+		<xpath expr="//th[@name='th_description']" position="after">
+			<th class="text-right">Image</th>
+		</xpath>
+        <xpath expr="//td[@name='td_name']" position="after">
+			<td class="text-right">
+				<img t-if="line.product_image_128"
+					t-att-src="image_data_uri(line.product_image_128)"
+					style="width: 90%;"/>
+			</td>
+		</xpath>
+	</template>
+</odoo>
