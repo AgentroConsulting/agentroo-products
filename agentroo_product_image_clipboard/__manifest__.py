@@ -3,7 +3,7 @@
 # See LICENSE file for full copyright and licensing details.
 
 {
-    'name': "Agentroo Product Image Clipboard",
+    'name': "Product Image Clipboard",
     'version': "18.0.1.0.0",
     'category': "Sales",
     'license': 'OPL-1',
