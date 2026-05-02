@@ -41,7 +41,7 @@
     'auto_install': False,
     'application': False,
     'images': [
-        'static/description/Banner.jpeg',
+        'static/description/Banner.png',
         'static/description/img.png',
         'static/description/img_1.png',
     ],
