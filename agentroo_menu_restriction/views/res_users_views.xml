@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit res.users form to add Allowed Apps field -->
+        <record id="view_users_form_inherit_allowed_apps" model="ir.ui.view">
+            <field name="name">res.users.form.inherit.allowed.apps</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='other_preferences']" position="inside">
+                    <field name="allowed_menu_ids"
+                           widget="many2many_tags"
+                           string="Allowed Apps"
+                           placeholder="Leave empty to allow all apps..."/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
