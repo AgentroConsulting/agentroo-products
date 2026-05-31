@@ -16,7 +16,7 @@
     "application": True,
     "installable": True,
     "images": [
-        "static/description/banner_1.png",
+        "static/description/banner.png",
         "static/description/screenshot_1.png",
         "static/description/screenshot_2.png",
         "static/description/screenshot_3.png",

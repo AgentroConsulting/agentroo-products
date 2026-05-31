@@ -16,6 +16,12 @@
         'security/ir.model.access.csv',
         'views/res_users_views.xml',
     ],
+    'images': [
+        'static/description/main_screenshot.png',
+        'static/description/Banner1.png',
+        'static/description/allowed-app-result.png',
+        'static/description/allowed-app-workflow.png',
+    ],
     'installable': True,
     'application': False,
     'auto_install': False,
