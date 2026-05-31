@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_dynamic_search_config_tree" model="ir.ui.view">
+        <field name="name">dynamic.search.config.tree</field>
+        <field name="model">dynamic.search.config</field>
+        <field name="arch" type="xml">
+            <list string="Search Configurations">
+                <field name="name"/>
+                <field name="model_id"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_dynamic_search_config_form" model="ir.ui.view">
+        <field name="name">dynamic.search.config.form</field>
+        <field name="model">dynamic.search.config</field>
+        <field name="arch" type="xml">
+            <form string="Search Configuration">
+                <header>
+                    <button name="action_open_validator" type="object" string="Validate" class="btn-secondary"/>
+                    <button name="action_apply_reload_views" type="object" string="Apply &amp; Reload Views" class="btn-primary"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="model_id" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group>
+                            <field name="model_name" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Filters">
+                            <field name="filter_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="active"/>
+                                    <field name="line_type"/>
+                                    <field name="name"/>
+                                    <field name="field_id" options="{'no_create': True, 'no_open': True}" invisible="line_type == 'separator'"/>
+                                    <field name="filter_type" invisible="line_type == 'separator'"/>
+                                    <field name="date_filter_type" invisible="line_type == 'separator' or filter_type != 'date'"/>
+                                    <field name="domain" invisible="line_type == 'separator' or filter_type != 'domain'"/>
+                                    <field name="help"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Group By">
+                            <field name="groupby_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="active"/>
+                                    <field name="line_type"/>
+                                    <field name="name"/>
+                                    <field name="field_id" options="{'no_create': True, 'no_open': True}" invisible="line_type == 'separator'"/>
+                                    <field name="date_groupby" invisible="line_type == 'separator'"/>
+                                    <field name="help"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                            <field name="note" placeholder="Internal notes for administrators"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dynamic_search_filter_tree" model="ir.ui.view">
+        <field name="name">dynamic.search.filter.tree</field>
+        <field name="model">dynamic.search.filter</field>
+        <field name="arch" type="xml">
+            <list string="Filters">
+                <field name="config_id"/>
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="field_id"/>
+                <field name="filter_type"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_dynamic_search_groupby_tree" model="ir.ui.view">
+        <field name="name">dynamic.search.groupby.tree</field>
+        <field name="model">dynamic.search.groupby</field>
+        <field name="arch" type="xml">
+            <list string="Group By">
+                <field name="config_id"/>
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="field_id"/>
+                <field name="date_groupby"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_dynamic_search_config" model="ir.actions.act_window">
+        <field name="name">Search Configurations</field>
+        <field name="res_model">dynamic.search.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p>Create reusable search filter and group by definitions per model.</p>
+        </field>
+    </record>
+</odoo>

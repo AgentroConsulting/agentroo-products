@@ -1,0 +1,25 @@
+{
+    "name": "Dynamic Search Configuration",
+    "summary": "Configure search filters and group by options without code changes",
+    "version": "19.0.1.1.0",
+    "author": "Agentroo Consulting",
+    "website": "https://www.agentroo.com",
+    "license": "LGPL-3",
+    "category": "Technical",
+    "depends": ["base", "web"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/search_config_views.xml",
+        "views/menu_views.xml",
+        "wizard/validator_views.xml",
+    ],
+    "application": True,
+    "installable": True,
+    "images": [
+        "static/description/banner_1.png",
+        "static/description/screenshot_1.png",
+        "static/description/screenshot_2.png",
+        "static/description/screenshot_3.png",
+        "static/description/screenshot_4.png",
+    ],
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_dynamic_search_root" name="Dynamic Search" parent="base.menu_administration" sequence="90" groups="base.group_system"/>
+    <menuitem
+        id="menu_dynamic_search_config"
+        name="Search Configurations"
+        parent="menu_dynamic_search_root"
+        action="action_dynamic_search_config"
+        sequence="10"
+        groups="base.group_system"
+    />
+</odoo>

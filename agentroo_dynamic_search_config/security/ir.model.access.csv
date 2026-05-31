@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dynamic_search_config_user,dynamic.search.config user,model_dynamic_search_config,base.group_user,1,0,0,0
+access_dynamic_search_config_system,dynamic.search.config system,model_dynamic_search_config,base.group_system,1,1,1,1
+access_dynamic_search_filter_user,dynamic.search.filter user,model_dynamic_search_filter,base.group_user,1,0,0,0
+access_dynamic_search_filter_system,dynamic.search.filter system,model_dynamic_search_filter,base.group_system,1,1,1,1
+access_dynamic_search_groupby_user,dynamic.search.groupby user,model_dynamic_search_groupby,base.group_user,1,0,0,0
+access_dynamic_search_groupby_system,dynamic.search.groupby system,model_dynamic_search_groupby,base.group_system,1,1,1,1
+access_dynamic_search_validator_system,dynamic.search.validator system,model_dynamic_search_validator,base.group_system,1,1,1,1
